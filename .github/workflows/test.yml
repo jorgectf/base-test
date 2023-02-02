@@ -11,6 +11,6 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-			- name: Test
+      - name: Test
         run: |
-          echo ${{ github.event.pull_request.head.ref }}
+	  echo ${{ github.event.pull_request.head.ref }}
