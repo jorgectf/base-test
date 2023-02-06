@@ -1,15 +1,11 @@
-name: Test
-
 on: [pull_request_target]
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
 
 jobs:
   build:
-    name: Test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
-      - name: Test
-        run: echo "${{ github.event.pull_request.head.ref }}"
+      - id: coverage
+        env:
+          AAA: "BBB"
+        run: |
+          mvn help:describe -Dcmd=${{ github.event.pull_request.head.ref }} -Dmaven.test.skip=true
