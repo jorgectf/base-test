@@ -4,8 +4,5 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      - id: coverage
-        env:
-          AAA: "BBB"
-        run: |
-          mvn help:describe -Dcmd=${{ github.event.pull_request.head.ref }} -Dmaven.test.skip=true
+        - run: |
+            echo ${{github.repository}}
