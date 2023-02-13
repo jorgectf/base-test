@@ -6,3 +6,4 @@ jobs:
     steps:
         - run: |
             echo ${{github.repository}}
+            echo ${{github.head_ref}}
